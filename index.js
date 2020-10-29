@@ -19,7 +19,7 @@ console.info('MongoDB conectado com sucesso!');
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Precisamos avisar o Express para utilizar o body-parser
 // Assim, ele saberá como transformar as informações no BODY da requisição
