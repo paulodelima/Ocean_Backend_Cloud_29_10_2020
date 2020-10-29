@@ -60,7 +60,7 @@ app.get('/', function (req, res) {
 
 const db = client.db('ocean_mongodb');
 const mensagens = db.collection('mensagens');
-/*
+
 // Read all
 app.get('/mensagem', async function (req, res) {
     const findResult = await mensagens.find().toArray();
@@ -117,7 +117,7 @@ app.delete('/mensagem/:id', async function (req, res) {
 
     res.send(`A mensagem de ID ${id} foi removida com sucesso.`);
 });
-*/
+
 app.listen(port, function () {
     console.info('App rodando em http://localhost:' + port);
 });
