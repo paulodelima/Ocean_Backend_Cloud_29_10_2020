@@ -5,7 +5,7 @@ const ObjectId = mongodb.ObjectId;
 
 (async () => {
 
-const connectionString = 'mongodb://localhost:27017';
+const connectionString = 'mongodb+srv://admin:admin_password@cluster0.c7pe2.mongodb.net/ocean_mongodb?retryWrites=true&w=majority';
 
 console.info('Conectando ao banco de dados MongoDB...');
 
@@ -13,7 +13,7 @@ const options = {
     useUnifiedTopology: true
 };
 
-//const client = await mongodb.MongoClient.connect(connectionString, options);
+const client = await mongodb.MongoClient.connect(connectionString, options);
 
 console.info('MongoDB conectado com sucesso!');
 
@@ -58,8 +58,8 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-//const db = client.db('ocean_backend_27_10_2020');
-//const mensagens = db.collection('mensagens');
+const db = client.db('ocean_mongodb');
+const mensagens = db.collection('mensagens');
 /*
 // Read all
 app.get('/mensagem', async function (req, res) {
